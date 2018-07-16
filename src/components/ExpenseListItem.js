@@ -9,7 +9,7 @@ const ExpenseListItem = ({description, amount, createdAt, id }) => {
         <h3>{description}</h3>
       </Link>
       <p>{amount}
-          ------
+          ---
          {moment(createdAt).format('MMMM Do, YYYY')}</p>
     </div>
   );
