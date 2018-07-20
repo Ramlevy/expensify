@@ -8,11 +8,12 @@ import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
+import './firebase/firebase.js'
 
 const store = configureStore();
 
-store.dispatch(addExpense({ description: 'Water bill', amount: 4500 }))
-store.dispatch(addExpense({ description: 'Gas bill', createdAt: 1000 }))
+store.dispatch(addExpense({ description: 'Water bill', amount: 6000 }))
+store.dispatch(addExpense({ description: 'Moses', amount: 4500 }))
 store.dispatch(addExpense({ description: 'Rent', amount: 110000 }))
 //  store.dispatch(setTextFilter('water'));
 
