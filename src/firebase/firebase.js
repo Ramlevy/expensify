@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 
 const database = firebase.database();
 
-// ref() -> reference to specific part of our DB
+// ref(path) -> reference to the location in the DB. If no path provided, returns the root of DB
 database.ref().set({
   name: 'Ram Levy',
   age: 24,
@@ -23,14 +23,21 @@ database.ref().set({
     city: 'Tel Aviv',
     country: 'Israel'
   }
+}).then(() => {
+  console.log("Data is saved");
+}).catch((e) => {
+  console.log("failed", e);
 });
 
-// database.ref().set('My Data!');         //Wipes
+console.log('I made a request to change the data');
 
-database.ref('age').set(26); // update age only
-database.ref('location/city').set('Beer Sheva');
 
-database.ref('attributes/height').set('185');
-database.ref('attributes/weight').set('84');
+database.ref('attributes').set({
+  height: 85,
+  weight: 185
+}).then(() => {
+  console.log("att saved")
+}).catch((e) => {
+  console.log(e);
+});
 
-// console.log('I made a request to change the data');
