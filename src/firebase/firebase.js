@@ -15,28 +15,48 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 
-// ref(path) -> reference to the location in the DB. If no path provided, returns the root of DB
-database.ref().set({
-  name: 'Ram Levy',
-  age: 24,
-  stressLevel: 6,
-  isSingle: false,
-  location: {
-    city: 'Tel Aviv',
-    country: 'Israel'
-  },
-  job: 'Architect'
-}).then(() => {
-  console.log("Data is saved");
-}).catch((e) => {
-  console.log("failed", e);
-});
+database.ref('expenses').push({
+  description: 'Moses',
+  amount: 45,
+  createdAt: 100
+})
 
-// subscribe to changes with .on()
-database.ref().on('value', (snapshot) => {
-  const val = snapshot.val();
-  console.log(`${val.name} is a ${val.job} at ${val.location.city}`);
-});
+database.ref('expenses').push({
+  description: 'BBB',
+  amount: 52,
+  createdAt: 200
+})
+
+database.ref('expenses').push({
+  description: 'Anati',
+  amount: 20,
+  createdAt: 300
+}) 
+
+database.ref('expenses/-LIHGLo3Sbs2TdJp-oNo').remove();
+
+// // ref(path) -> reference to the location in the DB. If no path provided, returns the root of DB
+// database.ref().set({
+//   name: 'Ram Levy',
+//   age: 24,
+//   stressLevel: 6,
+//   isSingle: false,
+//   location: {
+//     city: 'Tel Aviv',
+//     country: 'Israel'
+//   },
+//   job: 'Architect'
+// }).then(() => {
+//   console.log("Data is saved");
+// }).catch((e) => {
+//   console.log("failed", e);
+// });
+
+// // subscribe to changes with .on()
+// database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   console.log(`${val.name} is a ${val.job} at ${val.location.city}`);
+// });
 
 
 // // Create Data
@@ -66,6 +86,7 @@ database.ref().on('value', (snapshot) => {
 //   'location/city': 'New York'
 // })
 
+// // Fetch Data
 // database.ref('location')
 //   .once('value')
 //   .then((snapshot) => {
