@@ -8,12 +8,12 @@ import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
-import './firebase/firebase.js';
+import { firebase } from './firebase/firebase.js';
 
 const store = configureStore();
 
 const jsx = (
-  <Provider store = { store }>
+  <Provider store={store}>
     <AppRouter />
   </Provider>
 );
@@ -25,4 +25,12 @@ store.dispatch(startSetExpenses()).then(() => {
   ReactDOM.render(jsx, document.getElementById('app'))
 });
 
+// runs on Authenticated to unAuthenticated or the opposite
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log('log in');
+  } else {
+    console.log('log out');
+  }
+});
 
