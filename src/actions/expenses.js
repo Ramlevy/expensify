@@ -36,7 +36,7 @@ export const removeExpense = ({ id } = {}) => ({
 export const startRemoveExpense = ({ id } = {}) => {
   return (dispatch, getState) => { // Async Action
     const uid = getState().auth.uid;
-    return database.ref(`users/${uid}/expenses`).remove().then(() => { // return the promise
+    return database.ref(`users/${uid}/expenses/${id}`).remove().then(() => { // return the promise
       dispatch(removeExpense({ id }));
     });
   };

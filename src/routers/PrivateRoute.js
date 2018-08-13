@@ -14,7 +14,8 @@ export const PrivateRoute = ( // ...rest = All other props that we didn't destru
       ) : (
           <Redirect to="/" />
         )
-    )} />
+    )} 
+    />
   );
 
 const mapStateToProps = (state) => ({

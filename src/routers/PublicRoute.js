@@ -11,7 +11,8 @@ export const PublicRoute = ( // ...rest = All other props that we didn't destruc
       ) : (
           <Component {...props} />
         )
-    )} />
+    )}
+    />
   );
 
 const mapStateToProps = (state) => ({
