@@ -18,6 +18,7 @@ export const startLogin = () => {
 
 export const startLogout = () => {
   return () => {
+    console.log("AAA")
     return firebase.auth().signOut();
   };
 };
