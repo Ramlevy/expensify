@@ -10,7 +10,7 @@ export const Header = ({ startLogout }) => (
         <Link className="header__title" to="/dashboard">
           <h1>Expensify</h1>
         </Link> {/* "/" is in every link name, so we use exact property */}
-        <button className="button button--link" onClick={startLogout}>Logouttttttttt</button>
+        <button className="button button--link" onClick={startLogout}>Logout</button>
       </div>
     </div>
   </header>
