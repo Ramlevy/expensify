@@ -16,7 +16,9 @@ export class EditExpensePage extends React.Component {
     return (
       <div>
         <div className="page-header">
-          <h1 className="page-header__title">Edit Expense</h1>
+          <div className="content-container">
+            <h1 className="page-header__title">Edit Expense</h1>
+          </div>
         </div>
         <div className="content-container">
           <ExpenseForm
