@@ -22,4 +22,11 @@
   &:hover {
     background: $off-white;
   }
+
+  @media (min-width : $desktop-breakpoint) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $m-size;
+  }
 }
