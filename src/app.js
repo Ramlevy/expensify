@@ -8,6 +8,7 @@ import { login, logout } from './actions/auth';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import { firebase } from './firebase/firebase.js';
+import LoadingPage from './components/LoadingPage.js';
 
 const store = configureStore();
 
@@ -26,7 +27,7 @@ const renderApp = () => {
 };
 
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'))
+ReactDOM.render(<LoadingPage />, document.getElementById('app'))
 
 // runs on Authenticated to unAuthenticated or the opposite
 firebase.auth().onAuthStateChanged((user) => {
